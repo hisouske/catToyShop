@@ -1,0 +1,70 @@
+create table member(
+id varchar2(10) primary key,
+pw varchar2(10),
+name varchar2(10),
+email varchar2(50));
+
+
+create table goods(
+code number primary key,
+category varchar2(10),
+name varchar2(50),
+quantity number,
+pic varchar2(100),
+price number,
+dpic varchar2(100),
+dtext varchar2(500));
+
+
+create table review(
+code number primary key,
+admincode number default 0,
+id varchar2(10),
+text varchar2(100),
+point number,
+gcode number,
+time timestamp,
+constraint fk_ggcode foreign key(gcode) references goods(code) on delete cascade,
+constraint fk_id foreign key(id) references member(id) on delete cascade);
+
+
+create table cart(
+code number primary key,
+id varchar2(10),
+gcode number,
+qtt number,
+constraint fk_gcode foreign key(gcode) references goods(code) on delete cascade);
+
+create table payment(
+code number primary key,
+ordernum varchar2(10),
+id varchar2(10),
+gcode number,
+qtt number,
+time timestamp,
+constraint fk_gggcode foreign key(gcode) references goods(code) on delete cascade,
+constraint fk_iid foreign key(id) references member(id) on delete cascade);
+
+
+create table pnum(
+code number primary key,
+pcode varchar2(10));
+
+
+create sequence ppcode_seq start with 1 increment by 1 nocycle;
+create sequence pcode_seq start with 1 increment by 1 nocycle;
+create sequence ccode_seq start with 1 increment by 1 nocycle;
+create sequence mcode_seq start with 1 increment by 1 nocycle;
+create sequence rcode_seq start with 1 increment by 1 nocycle;
+
+pcode_seq.nextval;
+mcode_seq.nextval;
+rcode_seq.nextval;
+ccode_seq.nextval;
+
+http://localhost:8282/jsp_project190925/main.do?command=sign
+/jsp_project190925/main.jsp
+
+sys as sysdba // 1234qwer
+
+
