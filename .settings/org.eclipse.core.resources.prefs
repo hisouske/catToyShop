@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/dao/cartdao.java=UTF-8
+encoding//src/dao/goodsdao.java=UTF-8
+encoding//src/dao/paymentdao.java=UTF-8
+encoding//src/dao/pnumdao.java=UTF-8
+encoding//src/dao/reviewdao.java=UTF-8
+encoding//src/dto/pagenum.java=UTF-8
+encoding//src/util/DBManager.java=UTF-8
